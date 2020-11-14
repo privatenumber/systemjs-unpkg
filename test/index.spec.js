@@ -13,6 +13,18 @@ test('should resolve module on UNPKG', async () => {
 	spy.mockRestore();
 });
 
+test('should resolve versioned module on UNPKG', async () => {
+	const {System} = require('systemjs');
+	require('systemjs/dist/extras/amd'); // eslint-disable-line import/no-unassigned-import
+	const spy = jest.spyOn(System.constructor.prototype, 'resolve');
+	require('../src/systemjs-unpkg'); // eslint-disable-line import/no-unassigned-import
+
+	const _ = await System.import('lodash@4.17.0');
+	expect(spy).toHaveBeenNthCalledWith(2, '//unpkg.com/lodash@4.17.0', undefined);
+	expect(_.VERSION).toBe('4.17.0');
+	spy.mockRestore();
+});
+
 test('should fail when resolving non-existing module', async () => {
 	const {System} = require('systemjs');
 	const spy = jest.spyOn(System.constructor.prototype, 'resolve');

@@ -2,8 +2,6 @@
 
 Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs) using [UNPKG](https://unpkg.com).
 
-Here's a [starter CodePen template](https://codepen.io/privatenumber/pen/pobGZmR?editors=0010) if you want to see it in action!
-
 **Before**
 
 ```html
@@ -18,7 +16,7 @@ Here's a [starter CodePen template](https://codepen.io/privatenumber/pen/pobGZmR
 ```
 
 ```js
-// Won't work unless the import map above is defined
+// Won't work unless the import map above is declared
 const _ = await System.import('lodash');
 ```
 
@@ -29,8 +27,20 @@ const _ = await System.import('lodash');
 const _ = await System.import('lodash');
 ```
 
+**You can also specify npm semver ranges and tags**
+
+```js
+const $ = await System.import('jquery@2.2.4');
+
+const $ = await System.import('jquery@^2.2.4');
+
+const d3 = await System.import('d3@next');
+```
+
+Here's a [starter CodePen template](https://codepen.io/privatenumber/pen/pobGZmR?editors=0010) to get you started!
+
 ## 🙋‍♂️ Why?
-- **⚡️ Simplify SystemJS setup** Zero config setup to seamlessly resolve arbitrary bare specifiers!
+- **⚡️ Simplify SystemJS setup** Zero config setup to seamlessly resolve arbitrary bare specifiers with versions!
 - **🔥 Import map fallback** Only resolves specifiers that aren't defined in your [import map](https://github.com/systemjs/systemjs/blob/master/docs/import-maps.md)!
 - **🐥 Tiny** Only `338B`!
 
