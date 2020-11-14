@@ -1,0 +1,47 @@
+{
+	"name": "systemjs-unpkg",
+	"version": "0.0.0-semantic-release",
+	"description": "Auto-resolve bare specifiers in SystemJS using UNPKG",
+	"keywords": [
+		"systemjs",
+		"extra",
+		"unpkg",
+		"auto resolve",
+		"bare specifiers"
+	],
+	"license": "MIT",
+	"repository": "privatenumber/systemjs-unpkg",
+	"funding": "https://github.com/privatenumber/systemjs-unpkg?sponsor=1",
+	"author": {
+		"name": "Hiroki Osame",
+		"email": "hiroki.osame@gmail.com"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "dist/systemjs-unpkg.js",
+	"scripts": {
+		"lint": "xo",
+		"test": "jest",
+		"build": "mkdir -p dist && terser src/systemjs-unpkg.js -m -o dist/systemjs-unpkg.js"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"xo",
+			"jest --bail --findRelatedTests"
+		]
+	},
+	"devDependencies": {
+		"husky": "^4.3.0",
+		"jest": "^26.6.3",
+		"lint-staged": "^10.5.1",
+		"systemjs": "^6.7.1",
+		"terser": "^5.3.8",
+		"xo": "^0.34.2"
+	}
+}
