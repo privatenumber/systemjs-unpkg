@@ -16,13 +16,15 @@ Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs)
 ```
 
 ```js
-const _ = await System.import('lodash'); // ⬅ Won't work unless the import map above is defined
+// Won't work unless the import map above is defined
+const _ = await System.import('lodash');
 ```
 
-**After**
+**After<sup>✨</sup>**
 
 ```js
-const _ = await System.import('lodash'); // ⬅ Automatically resolved without import map
+// Automatically resolved without import map!
+const _ = await System.import('lodash');
 ```
 
 ## 🙋‍♂️ Why?
