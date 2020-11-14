@@ -1,6 +1,8 @@
 # systemjs-unpkg [![Latest version](https://badgen.net/npm/v/systemjs-unpkg)](https://npm.im/systemjs-unpkg) [![Monthly downloads](https://badgen.net/npm/dm/systemjs-unpkg)](https://npm.im/systemjs-unpkg) [![Install size](https://packagephobia.now.sh/badge?p=systemjs-unpkg)](https://packagephobia.now.sh/result?p=systemjs-unpkg) [![Bundle size](https://badgen.net/bundlephobia/minzip/systemjs-unpkg)](https://bundlephobia.com/result?p=systemjs-unpkg)
 
-Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs) using [UNPKG](https://unpkg.com)
+Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs) using [UNPKG](https://unpkg.com).
+
+Here's a [starter CodePen template](https://codepen.io/privatenumber/pen/pobGZmR?editors=0010) if you want to see it in action!
 
 **Before**
 
