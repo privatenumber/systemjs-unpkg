@@ -30,7 +30,7 @@ const _ = await System.import('lodash');
 ## 🙋‍♂️ Why?
 - **⚡️ Simplify SystemJS setup** Zero config setup to seamlessly resolve arbitrary bare specifiers!
 - **🔥 Import map fallback** Only resolves specifiers that aren't defined in your [import map](https://github.com/systemjs/systemjs/blob/master/docs/import-maps.md)!
-- **🐥 Tiny** Only `255B`!
+- **🐥 Tiny** Only `338B`!
 
 ## 🚀 Install
 ```sh
