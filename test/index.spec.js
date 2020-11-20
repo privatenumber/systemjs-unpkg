@@ -8,7 +8,7 @@ test('should resolve module on UNPKG', async () => {
 	require('../src/systemjs-unpkg'); // eslint-disable-line import/no-unassigned-import
 
 	await System.import('lodash');
-	expect(spy).toHaveBeenNthCalledWith(2, '//unpkg.com/lodash', undefined);
+	expect(spy).toHaveBeenNthCalledWith(2, 'https://unpkg.com/lodash', undefined);
 
 	spy.mockRestore();
 });
@@ -20,7 +20,7 @@ test('should resolve versioned module on UNPKG', async () => {
 	require('../src/systemjs-unpkg'); // eslint-disable-line import/no-unassigned-import
 
 	const _ = await System.import('lodash@4.17.0');
-	expect(spy).toHaveBeenNthCalledWith(2, '//unpkg.com/lodash@4.17.0', undefined);
+	expect(spy).toHaveBeenNthCalledWith(2, 'https://unpkg.com/lodash@4.17.0', undefined);
 	expect(_.VERSION).toBe('4.17.0');
 	spy.mockRestore();
 });
@@ -35,7 +35,7 @@ test('should fail when resolving non-existing module', async () => {
 		System.import(nonExistentPkg),
 	).rejects.toThrow('404 Not Found');
 
-	expect(spy).toHaveBeenNthCalledWith(2, '//unpkg.com/' + nonExistentPkg, undefined);
+	expect(spy).toHaveBeenNthCalledWith(2, 'https://unpkg.com/' + nonExistentPkg, undefined);
 
 	spy.mockRestore();
 });
