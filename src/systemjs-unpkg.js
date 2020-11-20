@@ -7,7 +7,7 @@
 		try {
 			return resolve.apply(this, arguments);
 		} catch (error) {
-			id = '//unpkg.com/' + id;
+			id = 'https://unpkg.com/' + id;
 			try {
 				return resolve.call(this, id, parentUrl);
 			} catch (_) {
