@@ -39,7 +39,7 @@ const d3 = await System.import('d3@next');
 
 Here's a [starter CodePen template](https://codepen.io/privatenumber/pen/pobGZmR?editors=0010) to get you started!
 
-<sub>If you like this project, please star it & [follow me](https://github.com/<%= githubUsername %>) to see what other cool projects I'm working on! ❤️</sub>
+<sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🙋‍♂️ Why?
 - **⚡️ Simplify SystemJS setup** Zero config setup to seamlessly resolve arbitrary bare specifiers with versions!
