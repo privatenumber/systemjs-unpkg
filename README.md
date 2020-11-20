@@ -1,6 +1,6 @@
 # systemjs-unpkg [![Latest version](https://badgen.net/npm/v/systemjs-unpkg)](https://npm.im/systemjs-unpkg) [![Monthly downloads](https://badgen.net/npm/dm/systemjs-unpkg)](https://npm.im/systemjs-unpkg) [![Install size](https://packagephobia.now.sh/badge?p=systemjs-unpkg)](https://packagephobia.now.sh/result?p=systemjs-unpkg) [![Bundle size](https://badgen.net/bundlephobia/minzip/systemjs-unpkg)](https://bundlephobia.com/result?p=systemjs-unpkg)
 
-Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs) using [UNPKG](https://unpkg.com)
+Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs) using [UNPKG](https://unpkg.com).
 
 **Before**
 
@@ -16,7 +16,7 @@ Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs)
 ```
 
 ```js
-// Won't work unless the import map above is defined
+// Won't work unless the import map above is declared
 const _ = await System.import('lodash');
 ```
 
@@ -27,10 +27,24 @@ const _ = await System.import('lodash');
 const _ = await System.import('lodash');
 ```
 
+**You can also specify npm semver ranges and tags**
+
+```js
+const $ = await System.import('jquery@2.2.4');
+
+const $ = await System.import('jquery@^2.2.4');
+
+const d3 = await System.import('d3@next');
+```
+
+Here's a [starter CodePen template](https://codepen.io/privatenumber/pen/pobGZmR?editors=0010) to get you started!
+
+<sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
+
 ## 🙋‍♂️ Why?
-- **⚡️ Simplify SystemJS setup** Zero config setup to seamlessly resolve arbitrary bare specifiers!
+- **⚡️ Simplify SystemJS setup** Zero config setup to seamlessly resolve arbitrary bare specifiers with versions!
 - **🔥 Import map fallback** Only resolves specifiers that aren't defined in your [import map](https://github.com/systemjs/systemjs/blob/master/docs/import-maps.md)!
-- **🐥 Tiny** Only `255B`!
+- **🐥 Tiny** Only `338B`!
 
 ## 🚀 Install
 ```sh
