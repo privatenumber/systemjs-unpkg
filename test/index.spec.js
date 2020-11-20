@@ -11,7 +11,7 @@ test('should resolve module on UNPKG', async () => {
 	expect(spy).toHaveBeenNthCalledWith(2, 'https://unpkg.com/lodash', undefined);
 
 	spy.mockRestore();
-});
+}, 10000);
 
 test('should resolve versioned module on UNPKG', async () => {
 	const {System} = require('systemjs');
@@ -23,7 +23,7 @@ test('should resolve versioned module on UNPKG', async () => {
 	expect(spy).toHaveBeenNthCalledWith(2, 'https://unpkg.com/lodash@4.17.0', undefined);
 	expect(_.VERSION).toBe('4.17.0');
 	spy.mockRestore();
-});
+}, 10000);
 
 test('should fail when resolving non-existing module', async () => {
 	const {System} = require('systemjs');
@@ -38,7 +38,7 @@ test('should fail when resolving non-existing module', async () => {
 	expect(spy).toHaveBeenNthCalledWith(2, 'https://unpkg.com/' + nonExistentPkg, undefined);
 
 	spy.mockRestore();
-});
+}, 10000);
 
 test('should not try to resolve relative paths', async () => {
 	const {System} = require('systemjs');
@@ -52,7 +52,7 @@ test('should not try to resolve relative paths', async () => {
 	expect(spy).toHaveBeenCalledTimes(1);
 
 	spy.mockRestore();
-});
+}, 10000);
 
 test('should not try to resolve absolute paths', async () => {
 	const {System} = require('systemjs');
@@ -66,7 +66,7 @@ test('should not try to resolve absolute paths', async () => {
 	expect(spy).toHaveBeenCalledTimes(1);
 
 	spy.mockRestore();
-});
+}, 10000);
 
 test('should use importmap to resolve non-existing package', async () => {
 	const {System, applyImportMap} = require('systemjs');
@@ -85,7 +85,7 @@ test('should use importmap to resolve non-existing package', async () => {
 	expect(spy).toHaveBeenCalledTimes(1);
 
 	spy.mockRestore();
-});
+}, 10000);
 
 test('should use importmap to resolve underscore to lodash', async () => {
 	const {System, applyImportMap} = require('systemjs');
@@ -102,4 +102,4 @@ test('should use importmap to resolve underscore to lodash', async () => {
 	expect(spy).toHaveBeenCalledTimes(1);
 
 	spy.mockRestore();
-});
+}, 10000);
