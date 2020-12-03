@@ -4,6 +4,8 @@ Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs)
 
 **Before**
 
+Without this plugin, you have to manually declare individual dependencies in an importmap.
+
 ```html
 <script type="systemjs-importmap">
 {
@@ -16,14 +18,14 @@ Auto-resolve bare specifiers in [SystemJS](https://github.com/systemjs/systemjs)
 ```
 
 ```js
-// Won't work unless the import map above is declared
+// Won't work unless the importmap above is declared
 const _ = await System.import('lodash');
 ```
 
 **After<sup>✨</sup>**
 
 ```js
-// Automatically resolved without import map!
+// Automatically resolved without importmap!
 const _ = await System.import('lodash');
 ```
 
